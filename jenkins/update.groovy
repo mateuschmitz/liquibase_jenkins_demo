@@ -48,7 +48,7 @@ pipeline {
         stage('Publish Database Tag') {
             steps {
                 withCredentials([string(credentialsId: 'github_token', variable: 'GITHUB_TOKEN')]) {
-                    sh('git push https://$GITHUB_TOKEN@github.com/mateuschmitz/liquibase_demo.git ' + "$DB_VERSION")
+                    sh('git push https://$GITHUB_TOKEN@github.com/mateuschmitz/liquibase_jenkins_demo.git ' + "$DB_VERSION")
                 }
             }
         }
